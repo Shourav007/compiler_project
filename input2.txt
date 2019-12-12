@@ -1,0 +1,52 @@
+#this is a very simple compiler
+#a small addition subtraction multiplication division can be done here
+
+main_FUNCTION >
+{
+
+	#comment declaration part
+	INTEGER a,b,c;
+	a=007;
+	b=014;
+	c=005;
+	
+	#bigmod operation is done here
+	BIGMOD(5,1000,7);
+	
+	#if elseoperation is done here
+	IF(b>a)
+	{
+		a+b;
+	}
+	ELSE
+	{
+		a-b;
+	}
+	
+	#loop operation is done here 
+	LOOP(1-5)
+	{
+		a=a+1000;
+	}
+	
+	#divide by zero
+	INTEGER E,F;
+	E=0;
+	F=5;
+	F/E;
+	
+	#switch operation is done here
+	SWITCH ( a )
+	{
+	CASE 1 :
+		a + b; BREAK;
+	+
+	CASE 2 :
+		b + c; BREAK;
+	+
+	CASE 3 : 
+		a + c; BREAK;
+	DEFAULT :
+		109; BREAK;
+	}
+}	

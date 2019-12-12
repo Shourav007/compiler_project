@@ -1,0 +1,18 @@
+Declaration
+Value of the variable: 7	
+Value of the variable: 14	
+Value of the variable: 5	
+
+Bigmod of 5 ^ 1000 MOD 7 is = 2
+value of expression: 2
+value of expression in IF: 21
+Value of the variable: 1007	
+value of the loop: 1 expression value: 1007
+value of the loop: 2 expression value: 1007
+value of the loop: 3 expression value: 1007
+value of the loop: 4 expression value: 1007
+Declaration
+Value of the variable: 0	
+Value of the variable: 5	
+
+division by zero error, dont do this again... :(  	value of expression: 0
