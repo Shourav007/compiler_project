@@ -1,0 +1,56 @@
+const int trigpin=9;
+const int echopin=10;
+const int VCC=11;
+const int GND=12;
+const int LED1=2;
+const int LED2=3;
+const int LED3=4;
+
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(trigpin,OUTPUT);
+  pinMode(echopin,INPUT);
+  pinMode(VCC,OUTPUT);
+  pinMode(GND,OUTPUT);
+  pinMode(LED1,OUTPUT);
+  pinMode(LED2,OUTPUT);
+  pinMode(LED3,OUTPUT);
+  digitalWrite(VCC,HIGH);
+  digitalWrite(GND,LOW);
+
+}
+
+void loop() {
+int distance;
+int duration;
+  digitalWrite(trigpin,LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigpin,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigpin,LOW);
+  
+  
+  duration = pulseIn(echopin,HIGH);
+  distance = duration * 0.034 / 2;
+  
+  Serial.print("\nObstacles in : ");
+  Serial.print(distance);
+  
+  digitalWrite(LED1,LOW);
+  digitalWrite(LED2,LOW);
+  digitalWrite(LED3,LOW);
+  if(distance <=10){
+    digitalWrite(LED1,HIGH);
+  }
+  else if(distance <=20){
+    digitalWrite(LED2,HIGH);
+  }
+  else{
+    digitalWrite(LED3,HIGH);
+  }
+  
+  delay(500);
+  // put your main code here, to run repeatedly:
+
+}

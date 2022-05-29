@@ -1,0 +1,56 @@
+const int trigpin = 9;
+const int echopin = 10;
+const int pingPin = 7;
+const int temp1 = 3;
+const int temp2 = 4;
+const int temp3 = 2;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(trigpin,OUTPUT);
+  pinMode(echopin,INPUT);
+  pinMode(temp1,OUTPUT);
+   pinMode(temp2,OUTPUT);
+    pinMode(temp3,OUTPUT);
+     pinMode(6,OUTPUT);
+      pinMode(5,OUTPUT);
+}
+void loop()
+{
+    digitalWrite(6,HIGH);
+ digitalWrite(5,LOW);
+  digitalWrite(trigpin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigpin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigpin,LOW);
+
+ int duration=pulseIn(echopin,HIGH); //
+  int distancecm=duration*0.034/2;
+   int distance=distancecm;
+   if(distance<=50)
+   {
+     digitalWrite(temp1,HIGH);
+     digitalWrite(temp2,LOW);
+     digitalWrite(temp3,LOW);
+
+   }
+   else if(distance<=100)
+   {
+     digitalWrite(temp2,HIGH);
+     digitalWrite(temp1,LOW);
+     digitalWrite(temp3,LOW);
+   }
+   else
+   {
+     digitalWrite(temp3,HIGH);
+     digitalWrite(temp1,LOW);
+     digitalWrite(temp2,LOW);
+   }
+  //Serial.print(inches);
+//  Serial.print("in, ");
+  Serial.print(distancecm);
+  Serial.print("cm");
+  Serial.println();
+  delay(100);
+}
